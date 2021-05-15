@@ -13,7 +13,7 @@ class LinkedList:
         self.head_node = new_node
     
     def stringify_list(self):
-        string_list = ""
+        string_list = ''
         current_node = self.get_head_node()
         while current_node: # using a while loop and Node's get_next_node() to traverse the list, beginning at the head node, and collect each node’s value in a string
             if current_node.get_value() != None:
