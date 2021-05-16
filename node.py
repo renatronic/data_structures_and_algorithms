@@ -18,6 +18,7 @@ class Node:
     def increment_value(self):
         self.value = self.value + 1
 
+'''
 # tests
 yacko = Node('likes to yak')
 wacko = Node('has a penchant for hoarding snacks')
@@ -33,3 +34,4 @@ print(wackos_data)
 
 test = yacko.get_next_node().get_next_node().get_value()
 print(test)
+'''

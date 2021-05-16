@@ -34,15 +34,65 @@ class LinkedList:
                 else:
                     current_node = next_node
 
-# Explanation:
-# Consider a -> b -> c and we want to remove b_node.
-# In order to remove node_b, you must first next node_a to node_c (where node_b was nexting). Then you can remove node_b.
-# This method does this by updating the link within the a_node to match what b_node was pointing to prior to removing it from the linked list.
-# If a_node is the current_node, current_node.get_next_node() is b.
-# If b.get_value() == value_to_remove is True, you want to set a's next_node property to c.
+    # Explanation of the .remove_node() function:
+    # Consider a -> b -> c and we want to remove b_node.
+    # In order to remove node_b, you must first next node_a to node_c (where node_b was nexting). Then you can remove node_b.
+    # This method does this by updating the link within the a_node to match what b_node was pointing to prior to removing it from the linked list.
+    # If a_node is the current_node, current_node.get_next_node() is b.
+    # If b.get_value() == value_to_remove is True, you want to set a's next_node property to c.
 
+    def swap_nodes(input_list, val1, val2):
+        print(f'Swapping {va1} with {val2}.')
+
+        # assigning four variables to track the nodes that'll need to change
+        node1 = input_list.head_head
+        node2 = input_list.head_node
+        node1_prev = None
+        node2_prev = None
+
+        # prompt for one edge case: the two nodes to be swapped are the same
+        if val1 == val2:
+            print('Elements are the same; no swap needed.')
+            return
+
+        # finding the matching and preceding nodes
+        while node1 is not None:
+            if node1 == val1:
+                break
+            node1_prev = node1
+            node1 = node1.get_next_node()
+        
+        while node2 is not None:
+            if node2 == val2:
+                break
+            node2_prev = node2
+            node2 = node2.get_next_node()
+
+        # prompt for another edge case: no matchig node for one of the inputs
+        if (node1 is None or node2 is None):
+            print('Swap not possible: onde or more element(s) is not in the list.')
+            return
+
+        # updating the preceding nodes' pointers
+        if node1_prev is None:
+            input_list.head_node = node2
+        else:
+            node1_prev.set_next_node(node2)
+        
+        if node2_prev is None:
+            input_list.head_node = node1
+        else:
+            node2_prev.set_next_node(node1)
+        
+        # updating the nodes' next pointers
+        temp = node1.get_next_node() # first we save node1 next node/pointer in a temporary variable, since we're gonna change it
+        node1.set_next_node(node2.get_next_node())
+        node2.set_next_node(temp)
+
+'''
 word1 = Node('hate')
 word2 = Node('pain')
+
 word3 = Node('death')
 word4 = Node('love')
 
@@ -58,6 +108,19 @@ human.insert_beginning(word4.get_value())
 human.remove_node('love')
 human.remove_node(word3.get_value())
 print(human.stringify_list())
+swap_nodes(human, 'pain', 'life')
+print(human.stringify_list())
+'''
+
+ll = LinkedList()
+for i in range(10):
+  ll.insert_beginning(i)
+
+print(ll.stringify_list())
+
+swap_nodes(ll, 4, 5)
+
+print(ll.stringify_list())
 
 # So far you’ve built a method to remove the first occurrence of a given value. How do you think you would remove all nodes that have a specific value? Try building a method to do that!
 
