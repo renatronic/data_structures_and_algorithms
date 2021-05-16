@@ -90,6 +90,7 @@ class LinkedList:
         node2.set_next_node(temp)
 
 '''
+# .insert_beginning() and .remove() functions playground
 word1 = Node('hate')
 word2 = Node('pain')
 
@@ -112,6 +113,8 @@ swap_nodes(human, 'pain', 'life')
 print(human.stringify_list())
 '''
 
+'''
+# .swap_nodes() function playground
 ll = LinkedList()
 for i in range(10):
   ll.insert_beginning(i)
@@ -121,6 +124,7 @@ print(ll.stringify_list())
 swap_nodes(ll, 4, 5)
 
 print(ll.stringify_list())
+'''
 
 # So far you’ve built a method to remove the first occurrence of a given value. How do you think you would remove all nodes that have a specific value? Try building a method to do that!
 
