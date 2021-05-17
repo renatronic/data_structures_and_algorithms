@@ -1,9 +1,12 @@
+from node import Node
 from linked_list import LinkedList
+
+# !!!ERROR: RETURNING THE WRONG ELEMENT WHEN I START TO COUNT ON 1 AS TEACHED!!!
 
 def nth_last_node(linked_list, n):
     current = None
     tail_seeker = linked_list.head_node
-    count = 1
+    count = 0
 
     while tail_seeker:
         tail_seeker = tail_seeker.get_next_node()
@@ -15,9 +18,3 @@ def nth_last_node(linked_list, n):
             else:
                 current = current.get_next_node()
     return current
-
-def generate_test_linked_list():
-    linked_list = LinkedList()
-    for i in range(50, 0, -1):
-        linked_list.insert_beginning(i)
-    return linked_list
