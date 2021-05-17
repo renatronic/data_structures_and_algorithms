@@ -29,31 +29,22 @@ def swap_nodes(input_list, val1, val2):
         node2 = node2.get_next_node()
 
     # prompt for another edge case: no matchig node for one of the inputs
-        if (node1 is None or node2 is None):
-            print('Swap not possible: one or more element(s) is not in the list.')
-            return
+    if (node1 is None or node2 is None):
+        print('Swap not possible: one or more element(s) is not in the list.')
+        return
 
     # updating the preceding nodes' pointers
-        if node1_prev is None:
-            input_list.head_node = node2
-        else:
-            node1_prev.set_next_node(node2)
-        
-        if node2_prev is None:
-            input_list.head_node = node1
-        else:
-            node2_prev.set_next_node(node1)
+    if node1_prev is None:
+        input_list.head_node = node2
+    else:
+        node1_prev.set_next_node(node2)
+    
+    if node2_prev is None:
+        input_list.head_node = node1
+    else:
+        node2_prev.set_next_node(node1)
     
     # updating the nodes' next pointers
     temp = node1.get_next_node() # first we save node1 next node/pointer in a temporary variable, since we're gonna change it
     node1.set_next_node(node2.get_next_node())
     node2.set_next_node(temp)
-
-
-ll = LinkedList()
-for i in range(10):
-  ll.insert_beginning(i)
-
-print(ll.stringify_list())
-swap_nodes(ll, 4, 5)
-print(ll.stringify_list())
