@@ -1,7 +1,7 @@
 from node import Node
 from linked_list import LinkedList
 from swap_nodes import swap_nodes
-from nth_last_node import nth_last_node
+from finders import *
 
 '''
 # Node playground
@@ -57,14 +57,18 @@ swap_nodes(ll, 3, 8)
 print(ll.stringify_list())
 '''
 
+
 # .nth_last_node() playground
-def generate_test_linked_list():
+def generate_test_linked_list(length):
     linked_list = LinkedList()
-    for i in range(50, 0, -1):
+    for i in range(length, 0, -1):
         linked_list.insert_beginning(i)
     return linked_list
 
-test_list = generate_test_linked_list()
+test_list = generate_test_linked_list(9)
 print(test_list.stringify_list())
-nth_last = nth_last_node(test_list, 4)
-print(nth_last.value)
+# nth_last = nth_last_node(test_list, 10)
+# print(nth_last.value)
+
+mid_nod = find_middle(test_list)
+print(mid_nod.value)

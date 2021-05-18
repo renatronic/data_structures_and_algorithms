@@ -35,7 +35,7 @@ class LinkedList:
                     current_node = next_node
 
 '''
-Explanation of the .remove_node() function:
+Explanation of the .remove_node() method:
 Consider a -> b -> c and we want to remove b_node.
 In order to remove node_b, you must first next node_a to node_c (where node_b was nexting). Then you can remove node_b.
 This method does this by updating the link within the a_node to match what b_node was pointing to prior to removing it from the linked list.
