@@ -3,6 +3,7 @@ from linked_list import LinkedList
 from swap_nodes import swap_nodes
 from finders import *
 from queue import Queue
+from stack import Stack
 
 '''
 # Node playground
@@ -112,6 +113,7 @@ deli_line.dequeue()
 # ------------------------ #
 '''
 
+'''
 # queue playground 2
 sharks_in_the_shark_tank = Queue(5)
 
@@ -120,3 +122,32 @@ sharks_in_the_shark_tank.enqueue("Alisha")
 sharks_in_the_shark_tank.dequeue()
 sharks_in_the_shark_tank.enqueue("Kenny")
 sharks_in_the_shark_tank.dequeue()
+'''
+
+
+# stack playground
+# Defining an empty pizza stack
+pizza_stack = Stack(6)
+
+# Adding pizzas as they are ready until we have 
+pizza_stack.push("pizza #1")
+pizza_stack.push("pizza #2")
+pizza_stack.push("pizza #3")
+pizza_stack.push("pizza #4")
+pizza_stack.push("pizza #5")
+pizza_stack.push("pizza #6")
+
+# Uncomment the push() statement below:
+pizza_stack.push("pizza #7")
+
+# Delivering pizzas from the top of the stack down
+print("The first pizza to deliver is " + pizza_stack.peek())
+pizza_stack.pop()
+pizza_stack.pop()
+pizza_stack.pop()
+pizza_stack.pop()
+pizza_stack.pop()
+pizza_stack.pop()
+
+# Uncomment the pop() statement below:
+pizza_stack.pop()
