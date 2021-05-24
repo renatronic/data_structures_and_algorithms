@@ -30,4 +30,4 @@ class Node:
         self.prev_node = prev_node
         
     def increment_value(self):
-        self.value = self.value + 1
+        self.value += 1
