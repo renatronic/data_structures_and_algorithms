@@ -4,6 +4,7 @@ from swap_nodes import swap_nodes
 from finders import *
 from queue import Queue
 from stack import Stack
+from hash_map import HashMap
 
 '''
 # Node playground
@@ -124,7 +125,7 @@ sharks_in_the_shark_tank.enqueue("Kenny")
 sharks_in_the_shark_tank.dequeue()
 '''
 
-
+'''
 # stack playground
 # Defining an empty pizza stack
 pizza_stack = Stack(6)
@@ -151,3 +152,15 @@ pizza_stack.pop()
 
 # Uncomment the pop() statement below:
 pizza_stack.pop()
+'''
+
+hash_map = HashMap(15)
+
+hash_map.assign('gabbro', 'igneous')
+hash_map.assign('sandstone', 'sedimentary')
+hash_map.assign('gneiss', 'metamorphic')
+hash_map.assign('gneiss', 'artifact') # replaces the old value with this new one
+
+print(hash_map.retrieve('gabbro'))
+print(hash_map.retrieve('sandstone'))
+print(hash_map.retrieve('gneiss'))
