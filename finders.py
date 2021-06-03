@@ -68,3 +68,22 @@ ERRORS
 .nth_last_node RETURNS THE WRONG ELEMENT WHEN I START TO COUNT ON 1
 .find_middle() and .find_middle_alt RETURNS ONE MORE THEN THE MIDDLE
 '''
+
+
+# playground
+
+'''
+def generate_test_linked_list(length):
+    linked_list = LinkedList()
+    for i in range(length, 0, -1):
+        linked_list.insert_beginning(i)
+    return linked_list
+
+test_list = generate_test_linked_list(9)
+# print(test_list.stringify_list())
+# nth_last = nth_last_node(test_list, 10)
+# print(nth_last.value)
+
+mid_nod = find_middle(test_list)
+print(mid_nod.value)
+'''

@@ -1,3 +1,11 @@
+'''
+This hash map implementation uses linear probing, a kind of open 
+addressing collision strategy. In open addressing we stick to the array 
+as our underlying data structure, but we continue looking for a new 
+index to save our data if the first result of our hash function has a 
+different key’s data.
+'''
+
 class HashMap:
   def __init__(self, array_size):
     self.array_size = array_size
@@ -82,4 +90,20 @@ How would you delete a key-value pair from this hash map?
 2. Parts of the code are a little repetitive, how would you factor these roles differently?
 
 3. What should your hash map do if a key-value is added and the array is full? How does this hash map handle that?
+'''
+
+
+# playground
+
+'''
+hash_map = HashMap(15)
+
+hash_map.assign('gabbro', 'igneous')
+hash_map.assign('sandstone', 'sedimentary')
+hash_map.assign('gneiss', 'metamorphic')
+hash_map.assign('gneiss', 'artifact') # replaces the old value with this new one
+
+print(hash_map.retrieve('gabbro'))
+print(hash_map.retrieve('sandstone'))
+print(hash_map.retrieve('gneiss'))
 '''

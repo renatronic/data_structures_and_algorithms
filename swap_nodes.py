@@ -48,3 +48,42 @@ def swap_nodes(input_list, val1, val2):
     temp = node1.get_next_node() # first we save node1 next node/pointer in a temporary variable, since we're gonna change it
     node1.set_next_node(node2.get_next_node())
     node2.set_next_node(temp)
+
+
+# playground
+
+'''
+word1 = Node('hate')
+word2 = Node('pain')
+word3 = Node('death')
+word4 = Node('love')
+
+print(word1.get_value())
+'''
+
+'''
+human = LinkedList('life')
+human.insert_beginning(word1.get_value())
+human.insert_beginning(word2.get_value())
+human.insert_beginning(word3.get_value())
+human.insert_beginning(word4.get_value())
+human.insert_beginning(word4.get_value())
+human.insert_beginning(word4.get_value())
+human.remove_node('love')
+human.remove_node(word3.get_value())
+print(human.stringify_list())
+swap_nodes(human, 'hate', 'life')
+print(human.stringify_list())
+'''
+
+'''
+ll = LinkedList()
+for i in range(10):
+  ll.insert_beginning(i)
+
+#print(ll.stringify_list())
+
+swap_nodes(ll, 3, 8)
+
+print(ll.stringify_list())
+'''
